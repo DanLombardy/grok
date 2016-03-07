@@ -14,7 +14,7 @@ const reviewSchema = new mongoose.Schema({
 });
 
 const businessSchema = new mongoose.Schema({
-  businessName: String,
+  name: String,
   businessId: String,
   contactNumber: Number,
   street: String,

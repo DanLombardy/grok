@@ -43,3 +43,24 @@ businessRouter.delete('/businesses/:id', (req, res) => {
     res.status(200).json({msg: 'successfully removed business from database'});
   });
 });
+
+// reviews routes
+
+businessRouter.get('/businesses/:businessid/reviews/:reviewid', (req, res) => {
+  Business
+    .findById(req.params.businessid)
+    .select('name reviews')
+    .exec(
+      (err, business) => {
+      var review = business.reviews.id(req.params.reviewid);
+      var response = {
+        business: {
+          name: business.name,
+          id: req.params.businessid
+        },
+        review: review
+      };
+      if (err) return handleDBError(err, res);
+      res.status(200).json(response)
+    });
+});
