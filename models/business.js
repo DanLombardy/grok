@@ -3,7 +3,6 @@
 var mongoose = require('mongoose');
 
 var businessSchema = new mongoose.Schema({
-  business: {
     businessName: String,
     businessId: String,
     contactNumber: Number,
@@ -23,7 +22,6 @@ var businessSchema = new mongoose.Schema({
       metric4: String,
       metric5: String
     }]
-  }
 });
 
 module.exports = mongoose.model('Business'. businessSchema);
