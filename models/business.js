@@ -2,7 +2,18 @@
 
 const mongoose = require('mongoose');
 
-var businessSchema = new mongoose.Schema({
+const reviewSchema = new mongoose.Schema({
+  reviewId: String,
+  reviewerId: String,
+  reviewDate: Date,
+  metric1: String,
+  metric2: String,
+  metric3: String,
+  metric4: String,
+  metric5: String
+});
+
+const businessSchema = new mongoose.Schema({
   businessName: String,
   businessId: String,
   contactNumber: Number,
@@ -12,16 +23,7 @@ var businessSchema = new mongoose.Schema({
   country: String,
   county: String,
   description: String,
-  reviews:[{
-    reviewId: String,
-    reviewerId: String,
-    reviewDate: Date,
-    metric1: String,
-    metric2: String,
-    metric3: String,
-    metric4: String,
-    metric5: String
-  }]
+  reviews:[reviewSchema]
 });
 
 module.exports = exports = mongoose.model('Business', businessSchema);

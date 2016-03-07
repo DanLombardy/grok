@@ -12,6 +12,13 @@ businessRouter.get('/businesses', (req, res) => {
   });
 });
 
+businessRouter.get('/businesses/:id', (req, res) => {
+  Business.find({_id: req.params.id}, (err, data)=> {
+    if (err) return handleDBError(err, res);
+    res.status(200).json(data);
+  });
+});
+
 businessRouter.post('/businesses', jsonParser, (req, res) => {
   const newBusiness = new Business(req.body);
   newBusiness.save((err, data) => {
