@@ -12,6 +12,13 @@ businessRouter.get('/businesses', (req, res) => {
   });
 });
 
+businessRouter.get('/businesses/:id', (req, res) => {
+  Business.find({_id: req.params.id}, (err, data)=> {
+    if (err) return handleDBError(err, res);
+    res.status(200).json(data);
+  });
+});
+
 businessRouter.post('/businesses', jsonParser, (req, res) => {
   const newBusiness = new Business(req.body);
   newBusiness.save((err, data) => {
@@ -35,4 +42,25 @@ businessRouter.delete('/businesses/:id', (req, res) => {
     if (err) return handleDBError(err, res);
     res.status(200).json({msg: 'successfully removed business from database'});
   });
+});
+
+// reviews routes
+
+businessRouter.get('/businesses/:businessid/reviews/:reviewid', (req, res) => {
+  Business
+    .findById(req.params.businessid)
+    .select('name reviews')
+    .exec(
+      (err, business) => {
+      var review = business.reviews.id(req.params.reviewid);
+      var response = {
+        business: {
+          name: business.name,
+          id: req.params.businessid
+        },
+        review: review
+      };
+      if (err) return handleDBError(err, res);
+      res.status(200).json(response)
+    });
 });
