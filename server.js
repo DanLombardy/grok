@@ -5,7 +5,9 @@ mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/grok_dev');
 
 const reviewsRouter = require(__dirname + '/routes/reviews_routes');
 
-app.use('/api', reviewsRouter);
+app.use(express.static(__dirname + '/build'));
+
+app.use('/api', reviewsApi);
 
 var PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log('Server started on port: ' + PORT));
