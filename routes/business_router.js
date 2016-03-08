@@ -1,3 +1,4 @@
+// REST API ROUTES FOR BUSINESSES
 const express = require('express');
 const jsonParser = require('body-parser').json();
 const Business = require(__dirname + '/../models/business');
@@ -42,25 +43,4 @@ businessRouter.delete('/businesses/:id', (req, res) => {
     if (err) return handleDBError(err, res);
     res.status(200).json({msg: 'successfully removed business from database'});
   });
-});
-
-// reviews routes
-
-businessRouter.get('/businesses/:businessid/reviews/:reviewid', (req, res) => {
-  Business
-    .findById(req.params.businessid)
-    .select('name reviews')
-    .exec(
-      (err, business) => {
-      var review = business.reviews.id(req.params.reviewid);
-      var response = {
-        business: {
-          name: business.name,
-          id: req.params.businessid
-        },
-        review: review
-      };
-      if (err) return handleDBError(err, res);
-      res.status(200).json(response)
-    });
 });
