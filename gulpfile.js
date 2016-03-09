@@ -7,7 +7,7 @@ const Server = require('karma').Server;
 const scripts = ['**/*.js', '!node_modules/**'];
 const testFiles = ['./test/**/*.js'];
 
-gulp.task('eslint', () => {
+gulp.task('lint', () => {
   return gulp.src(scripts)
     .pipe(eslint({
       'rules': {
@@ -33,4 +33,4 @@ gulp.task('mocha', () => {
   }));
 });
 
-gulp.task('default', ['eslint', 'mocha']);
+gulp.task('default', ['lint', 'mocha']);

@@ -3,10 +3,9 @@
 const mongoose = require('mongoose');
 
 const reviewSchema = new mongoose.Schema({
-  author: {type: String, required: true},
-  reviewId: String,
-  reviewerId: String,
-  reviewDate: {type: Date, "default": Date.now},
+  author: String,
+  // reviewerid: Number,
+  reviewDate: {type: Date, 'default': Date.now},
   metric1: String,
   metric2: String,
   metric3: String,
@@ -16,7 +15,6 @@ const reviewSchema = new mongoose.Schema({
 
 const businessSchema = new mongoose.Schema({
   name: String,
-  businessId: String,
   contactNumber: Number,
   street: String,
   city: String,
