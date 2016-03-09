@@ -13,8 +13,8 @@ businessRouter.get('/businesses', (req, res) => {
   });
 });
 
-businessRouter.get('/businesses/:id', (req, res) => {
-  Business.find({_id: req.params.id}, (err, data)=> {
+businessRouter.get('/businesses/:businessid', (req, res) => {
+  Business.find({_id: req.params.businessid}, (err, data)=> {
     if (err) return handleDBError(err, res);
     res.status(200).json(data);
   });
@@ -28,7 +28,7 @@ businessRouter.post('/businesses', jsonParser, (req, res) => {
   });
 });
 
-businessRouter.put('/businesses/:id', jsonParser, (req, res) => {
+businessRouter.put('/businesses/:businessid', jsonParser, (req, res) => {
   const businessData = req.body;
   delete businessData._id;
 
@@ -38,7 +38,7 @@ businessRouter.put('/businesses/:id', jsonParser, (req, res) => {
   });
 });
 
-businessRouter.delete('/businesses/:id', (req, res) => {
+businessRouter.delete('/businesses/:businessid', (req, res) => {
   Business.remove({_id: req.params.id}, (err, data) => {
     if (err) return handleDBError(err, res);
     res.status(200).json({msg: 'successfully removed business from database'});
