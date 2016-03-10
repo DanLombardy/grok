@@ -7,14 +7,14 @@ const handleDBError = require(__dirname + '/../lib/handleDBError');
 const businessRouter = module.exports = exports = express.Router();
 
 businessRouter.get('/businesses', (req, res) => {
-  Business.find({}, (err, data)=> {
+  Business.find({}, (err, data) => {
     if (err) return handleDBError(err, res);
     res.status(200).json(data);
   });
 });
 
 businessRouter.get('/businesses/:businessid', (req, res) => {
-  Business.find({_id: req.params.businessid}, (err, data)=> {
+  Business.find({_id: req.params.businessid}, (err, data) => {
     if (err) return handleDBError(err, res);
     res.status(200).json(data);
   });
