@@ -2,7 +2,7 @@
 const express = require('express');
 const jsonParser = require('body-parser').json();
 const Business = require(__dirname + '/../models/business');
-const handleDBError = require(__dirname + '/../lib/handleDBError');
+const handleDBError = require(__dirname + '/../lib/handle_db_error');
 
 const reviewRouter = module.exports = exports = express.Router();
 
@@ -49,18 +49,18 @@ reviewRouter.post('/businesses/:businessid/reviews', jsonParser, (req, res) => {
     .exec((err, business) => {
       var review = {
         author: req.body.author,
-        metric1: req.body.metric1,
-        metric2: req.body.metric2,
-        metric3: req.body.metric3,
-        metric4: req.body.metric4,
-        metric5: req.body.metric5,
-      }
+        people: req.body.people,
+        time: req.body.time,
+        quality: req.body.quality,
+        soul: req.body.soul,
+        missing: req.body.missing
+      };
       business.reviews.push(review);
       business.save(function(err, business) {
         var thisReview = business.reviews[business.reviews.length - 1];
         if (err) return handleDBError(err, res);
         res.status(200).json(thisReview);
-      })
+      });
     });
 });
 
@@ -71,16 +71,16 @@ reviewRouter.put('/businesses/:businessid/reviews/:reviewid', jsonParser, (req, 
     .exec((err, business) => {
       var thisReview = business.reviews.id(req.params.reviewid);
       thisReview.author = req.body.author;
-      thisReview.metric1 = req.body.metric1;
-      thisReview.metric2 = req.body.metric2;
-      thisReview.metric3 = req.body.metric3;
-      thisReview.metric4 = req.body.metric4;
-      thisReview.metric5 = req.body.metric5;
+      thisReview.people = req.body.people;
+      thisReview.time = req.body.time;
+      thisReview.quality = req.body.quality;
+      thisReview.soul = req.body.soul;
+      thisReview.missing = req.body.missing;
 
       business.save((err, business) => {
         if (err) return handleDBError(err, res);
         res.status(200).json(thisReview);
-      })
+      });
     });
 });
 
@@ -93,8 +93,8 @@ reviewRouter.delete('/businesses/:businessid/reviews/:reviewid', (req, res) => {
       business.save(function(err) {
         if (err) return handleDBError(err, res);
         res.status(200).json('successfully deleted review');
-      })
-    })
+      });
+    });
 });
 
 

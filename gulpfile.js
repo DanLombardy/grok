@@ -4,11 +4,11 @@ const mocha = require('gulp-mocha');
 const webpack = require('webpack-stream');
 const Server = require('karma').Server;
 
-const scripts = ['**/*.js', '!node_modules/**'];
-const testFiles = ['./test/**/*.js'];
+const allScripts = ['**/*.js', '!node_modules/**'];
+const serverTestFiles = ['models/*.js', 'routes/*.js'];
 
 gulp.task('lint', () => {
-  return gulp.src(scripts)
+  return gulp.src(allScripts)
     .pipe(eslint({
       'rules': {
         'indent': [2, 2],
@@ -27,10 +27,13 @@ gulp.task('lint', () => {
     .pipe(eslint.format());
 });
 
-gulp.task('mocha', () => {
-  return gulp.src(testFiles)
-    .pipe(mocha({ reporter: 'tap'
-  }));
+gulp.task('test:server', () => {
+  return gulp.src('test/server/*spec.js')
+    .pipe(mocha());
 });
 
-gulp.task('default', ['lint', 'mocha']);
+gulp.task('watch', () => {
+  gulp.watch(allScripts, ['lint']);
+});
+
+gulp.task('default', ['watch']);
