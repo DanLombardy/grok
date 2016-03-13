@@ -2,19 +2,21 @@
 
 const mongoose = require('mongoose');
 
+// Review questions are explained in detail in "1 Page Design" in Grok files. 'Missing' stands for "What one thing are they missing?"
+
 const reviewSchema = new mongoose.Schema({
   author: String,
   // reviewerid: Number,
   reviewDate: {type: Date, 'default': Date.now},
-  metric1: String,
-  metric2: String,
-  metric3: String,
-  metric4: String,
-  metric5: String
+  people: String,
+  time: String,
+  quality: String,
+  soul: String,
+  missing: String
 });
 
 const businessSchema = new mongoose.Schema({
-  name: String,
+  name: {type: String, required: true},
   contactNumber: Number,
   street: String,
   city: String,

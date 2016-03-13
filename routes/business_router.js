@@ -2,7 +2,7 @@
 const express = require('express');
 const jsonParser = require('body-parser').json();
 const Business = require(__dirname + '/../models/business');
-const handleDBError = require(__dirname + '/../lib/handleDBError');
+const handleDBError = require(__dirname + '/../lib/handle_db_error');
 
 const businessRouter = module.exports = exports = express.Router();
 
@@ -41,6 +41,6 @@ businessRouter.put('/businesses/:businessid', jsonParser, (req, res) => {
 businessRouter.delete('/businesses/:businessid', (req, res) => {
   Business.remove({_id: req.params.id}, (err, data) => {
     if (err) return handleDBError(err, res);
-    res.status(200).json({msg: 'successfully removed business from database'});
+    res.status(200).json({msg: 'successfully removed business'});
   });
 });
