@@ -5,7 +5,7 @@ const expect = chai.expect;
 const mongoose = require('mongoose');
 process.env.MONGOLAB_URI = 'mongodb://localhost/grok_app_test';
 const server = require(__dirname + '/../server');
-const Review = require(__dirname + '/../models/review');
+const Review = require(__dirname + '/../models/business');
 
 describe('the reviews api', () => {
   after((done) => {
