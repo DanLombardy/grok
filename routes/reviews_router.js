@@ -79,7 +79,7 @@ reviewRouter.put('/businesses/:businessid/reviews/:reviewid', jsonParser, (req, 
 
       business.save((err, business) => {
         if (err) return handleDBError(err, res);
-        res.status(200).json(thisReview);
+        res.status(200).json('successfully updated review');
       });
     });
 });
