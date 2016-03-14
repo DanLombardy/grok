@@ -6,7 +6,7 @@ const Server = require('karma').Server;
 var concatCss = require('gulp-concat-css');
 
 
-const allScripts = ['**/*.js', '!node_modules/**'];
+const allScripts = ['**/*.js', '!node_modules/**', '!build/**'];
 const serverTestFiles = ['models/*.js', 'routes/*.js'];
 
 
@@ -25,14 +25,11 @@ gulp.task('webpack:dev', () => {
   .pipe(gulp.dest('build/'));
 });
 
-
 gulp.task('webpack:css', function () {
   return gulp.src('app/sass/*.css')
-    .pipe(concatCss("bundle.css"))
+    .pipe(concatCss('bundle.css'))
     .pipe(gulp.dest('build/'));
 });
-
-
 
 gulp.task('lint', () => {
   return gulp.src(allScripts)
@@ -59,17 +56,11 @@ gulp.task('test:server', () => {
     .pipe(mocha());
 });
 
-
-gulp.task('watch', () => {
-  gulp.watch(allScripts, ['lint']);
-});
-
-gulp.task('default', ['watch']);
-
 gulp.task('watch', function() {
-    gulp.watch('app/js/*.js', ['webpack:dev'] );
-    gulp.watch('app/sass/*.css', ['webpack:css'] );
-    gulp.watch('app/**/*.html', ['static:dev']);
+  gulp.watch(allScripts, ['lint']);
+  gulp.watch('app/js/*.js', ['webpack:dev'] );
+  gulp.watch('app/sass/*.css', ['webpack:css'] );
+  gulp.watch('app/**/*.html', ['static:dev']);
 });
 
 gulp.task('build', ['webpack:dev', 'static:dev', 'webpack:css']);
