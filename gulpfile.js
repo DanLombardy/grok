@@ -3,12 +3,12 @@ const eslint = require('gulp-eslint');
 const mocha = require('gulp-mocha');
 const webpack = require('webpack-stream');
 const Server = require('karma').Server;
-var concatCss = require('gulp-concat-css');
+const sass = require('gulp-sass');
+const sourceMaps = require('gulp-sourcemaps')
+const minifyCss = require('gulp-minify-css');
 
 
 const allScripts = ['**/*.js', '!node_modules/**', '!build/**'];
-const serverTestFiles = ['models/*.js', 'routes/*.js'];
-
 
 gulp.task('static:dev', () => {
   gulp.src('app/**/*.html')
@@ -25,10 +25,13 @@ gulp.task('webpack:dev', () => {
   .pipe(gulp.dest('build/'));
 });
 
-gulp.task('webpack:css', function () {
-  return gulp.src('app/sass/*.css')
-    .pipe(concatCss('bundle.css'))
-    .pipe(gulp.dest('build/'));
+gulp.task('sass:dev', () => {
+  return gulp.src('app/sass/*.scss')
+    .pipe(sourceMaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(minifyCss())
+    .pipe(sourceMaps.write())
+    .pipe(gulp.dest('build/css'));
 });
 
 gulp.task('lint', () => {
@@ -52,17 +55,17 @@ gulp.task('lint', () => {
 });
 
 gulp.task('test:server', () => {
-  return gulp.src('test/server/*spec.js')
+  return gulp.src('./test/server/*spec.js')
     .pipe(mocha());
 });
 
 gulp.task('watch', function() {
   gulp.watch(allScripts, ['lint']);
   gulp.watch('app/js/*.js', ['webpack:dev'] );
-  gulp.watch('app/sass/*.css', ['webpack:css'] );
+  gulp.watch('app/sass/*.sass', ['webpack:sass'] );
   gulp.watch('app/**/*.html', ['static:dev']);
 });
 
-gulp.task('build', ['webpack:dev', 'static:dev', 'webpack:css']);
+gulp.task('build', ['webpack:dev', 'static:dev', 'sass:dev']);
 gulp.task('default', ['lint', 'mocha']);
 
