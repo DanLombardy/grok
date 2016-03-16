@@ -1,1 +1,55 @@
-/*Header*/
+// User Profile Page CSS
+
+.user-profile-container {
+  overflow: auto;
+  border: 2px solid black;
+}
+
+.user-header {
+  height: 200px;
+  .name {
+    float:left;
+    margin: 4%;
+    text-align: center;
+    // display: inline-block;
+    width: 55%;
+    h1 {
+      font-size: 3em;
+    }
+    ul {
+      margin: 2%;
+      li {
+        margin: 2%;
+        display: inline-block;
+      }
+    }
+  }
+  .social {
+    margin-top: 7%;
+    width: 30%;
+    display: inline-block;
+    ul {
+      li {
+        display: inline-block;
+      }
+    }
+  }
+}
+.user-body{
+  nav {
+    margin-left: 5%;
+    border: 1px solid black;
+    width: 20%;
+    float:left;
+  }
+
+  .user-wordcloud {
+    display: inline;
+    width: 70%;
+    float: left;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
