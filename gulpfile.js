@@ -4,7 +4,7 @@ const mocha = require('gulp-mocha');
 const webpack = require('webpack-stream');
 const Server = require('karma').Server;
 const sass = require('gulp-sass');
-const sourceMaps = require('gulp-sourcemaps')
+const sourceMaps = require('gulp-sourcemaps');
 const minifyCss = require('gulp-minify-css');
 
 
@@ -62,7 +62,7 @@ gulp.task('test:server', () => {
 gulp.task('watch', function() {
   gulp.watch(allScripts, ['lint']);
   gulp.watch('app/js/*.js', ['webpack:dev'] );
-  gulp.watch('app/sass/*.sass', ['webpack:sass'] );
+  gulp.watch('app/sass/*.scss', ['sass:dev'] );
   gulp.watch('app/**/*.html', ['static:dev']);
 });
 

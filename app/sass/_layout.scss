@@ -1,1 +1,16 @@
 // CSS for layouts
+
+$max-width: 960px;
+
+header {
+  height: 100px;
+}
+
+main {
+  max-width: $max-width;
+  margin: 2% auto;
+}
+
+footer {
+  height: 150px;
+}
