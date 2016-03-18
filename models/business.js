@@ -17,7 +17,7 @@ const reviewSchema = new mongoose.Schema({
 
 const businessSchema = new mongoose.Schema({
   name: {type: String, required: true},
-  contactNumber: Number,
+  contactNumber: String,
   street: String,
   city: String,
   state: String,
