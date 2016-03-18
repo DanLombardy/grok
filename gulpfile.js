@@ -59,7 +59,7 @@ gulp.task('test:server', () => {
     .pipe(mocha());
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', () => {
   gulp.watch(allScripts, ['lint']);
   gulp.watch('app/js/*.js', ['webpack:dev'] );
   gulp.watch('app/sass/*.scss', ['sass:dev'] );
@@ -67,5 +67,5 @@ gulp.task('watch', function() {
 });
 
 gulp.task('build', ['webpack:dev', 'static:dev', 'sass:dev']);
-gulp.task('default', ['lint', 'mocha']);
+gulp.task('default', ['lint', 'test:server']);
 
