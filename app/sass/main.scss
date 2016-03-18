@@ -1,7 +1,23 @@
-@import '0cssRest';
-@import 'base';
-@import 'layout';
-@import 'module';
-@import 'state';
-@import 'theme';
+// TODO: Refactor CSS
+
+// Vendor
+@import 'vendor/0cssRest';
+
+// Base
+@import 'base/base';
+
+// Layout
+@import 'layout/layout';
+// @import 'layout/header';
+// @import 'layout/main';
+// @import 'layout/footer';
+
+// Module
+@import 'module/module';
+
+//State
+@import 'state/state';
+
+// Theme
+@import 'theme/theme';
 

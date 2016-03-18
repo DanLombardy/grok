@@ -10,7 +10,7 @@ var reviewUserSchema = new mongoose.Schema({
   city: String,
   state: String,
   zip: String,
-  phoneNumber: Number,
+  phoneNumber: String,
   email: String,
   reviews:[{
     reviewID: String,

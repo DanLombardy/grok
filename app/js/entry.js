@@ -6,9 +6,12 @@ var grokApp = angular.module('GrokApp', ['ngRoute']);
 
 grokApp.config(['$routeProvider', function($route) {
   $route
-    .when('/user/:username', {
-      templateUrl: 'user_profile_view.html'
-      controller: 'UserController'
+    .when('/', {
+      temmplateUrl: '/views/user_profile_view.html'
     })
-    .otherwise({redirectTo: '/main'});
+    // .when('/user/:username', {
+    //   templateUrl: 'user_profile_view.html'
+    //   controller: 'UserController'
+    // })
+    .otherwise({redirectTo: '/'});
 }])
