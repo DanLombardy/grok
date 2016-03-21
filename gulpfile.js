@@ -26,7 +26,7 @@ gulp.task('webpack:dev', () => {
 });
 
 gulp.task('sass:dev', () => {
-  return gulp.src('app/sass/*.scss')
+  return gulp.src('app/sass/**/*.scss')
     .pipe(sourceMaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(minifyCss())
@@ -62,7 +62,7 @@ gulp.task('test:server', () => {
 gulp.task('watch', () => {
   gulp.watch(allScripts, ['lint']);
   gulp.watch('app/js/*.js', ['webpack:dev'] );
-  gulp.watch('app/sass/*.scss', ['sass:dev'] );
+  gulp.watch('app/sass/**/*.scss', ['sass:dev'] );
   gulp.watch('app/**/*.html', ['static:dev']);
 });
 
