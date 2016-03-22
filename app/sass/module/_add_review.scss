@@ -1,0 +1,44 @@
+// Add Review Page CSS
+
+.review-page {
+  h1 {
+    font-size: 3em;
+    margin: 0.8em;
+  }
+  p {
+    margin-left: 5%;
+    margin-bottom: 2.5%;
+    font-size: 1.2em;
+  }
+}
+
+.review-form {
+  fieldset {
+    width: 100%;
+    position: relative;
+    label {
+      display: inline-block;
+      width: 15%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      margin: 0.5em;
+    }
+    textarea {
+      margin: 1em;
+      margin-left: 13em;
+      width: 65%;
+    }
+  }
+  input {
+    @extend .btn;
+    margin-bottom: 5%;
+    margin-right: 20%;
+    float: right;
+  }
+}
+
+// footer {
+//   position: relative;
+// }
