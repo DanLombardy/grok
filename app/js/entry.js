@@ -1,8 +1,13 @@
 require('angular/angular');
 require('angular-route');
+
 var angular = window.angular;
 
 var grokApp = angular.module('GrokApp', ['ngRoute']);
+require('./controllers/controllers')(grokApp);
+require('./directives/directives')(grokApp);
+
+
 
 grokApp.config(['$routeProvider', function($route) {
   $route
