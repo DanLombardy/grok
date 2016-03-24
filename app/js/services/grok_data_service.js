@@ -1,21 +1,25 @@
 module.exports = exports = function(app) {
-  app.factory('grok_data', ['$http', function($http) {
+  app.factory('grokData', ['$http', function grokData($http) {
 
-    var locationByCoords = function (lat, lng) {
-      return $http.get('/api/locations?lng=' + lng + '&lat=' + lat + '&maxDistance=20');
-    };
-
-    var locationById = function(locationid) {
-      return $http.get('/api/locations/' + locationid);
+    var Resource = function(resourceName) {
+      this.resourceName = resourceName;
     }
 
-     var addReviewById = function (locationid, data) {
-      return $http.post('/api/locations/' + locationid + '/reviews', data);
+    var allBusinesses = function () {
+      return $http.get('http://localhost:3000/api/businesses');
+    };
+
+    var businessById = function(businessid) {
+      return $http.get('/api/businesses/' + businessid);
+    }
+
+     var addReviewById = function (businessid, data) {
+      return $http.post('/api/businesses/' + businessid + '/reviews', data);
     };
 
     return {
-      locationByCoords : locationByCoords,
-      locationById: locationById,
+      allBusinesses : allBusinesses,
+      businessById: businessById,
       addReviewById: addReviewById
     };
 
