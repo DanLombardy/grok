@@ -1,0 +1,39 @@
+{
+  "name": "Mcdonalds",
+  "reviews":[{
+      "author": "Ronald Mcdonald",
+      "people": "The people were not clowns?!",
+      "time": "Food was delivered on time!",
+      "quality": "The nuggets were... OK...",
+      "soul": "Great atmosphere!",
+      "missing": "Not enough clowns!"
+    },
+    {
+      "author": "Tony the Tiger",
+      "people": "They were greeeeat!",
+      "time": "It was greeeeat!",
+      "quality": "It was greeeeat!",
+      "soul": "It was greeeeat!",
+      "missing": "It was greeeeat!!!!!"
+    }]
+}
+
+{
+  "name": "Burger King",
+  "reviews":[{
+      "author": "Hamburgler Jones",
+      "people": "There was this weird tiger with crazy eyes",
+      "time": "Located in a convenient location. Got here pretty quickly.",
+      "quality": "The nuggets were... OK...",
+      "soul": "I have no soul",
+      "missing": "What's one thing they're mising? Well I just stole one of their hamburgers!!!! AHAHA... I need help."
+    },
+    {
+      "author": "Tony the Tiger",
+      "people": "They were greeeeat!",
+      "time": "It was greeeeat!",
+      "quality": "It was greeeeat!",
+      "soul": "It was greeeeat!",
+      "missing": "It was... I can't stop... not again .... greeeeat!!!!!.."
+    }]
+}
