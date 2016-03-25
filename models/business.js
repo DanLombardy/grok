@@ -17,6 +17,10 @@ const reviewSchema = new mongoose.Schema({
 
 const businessSchema = new mongoose.Schema({
   name: {type: String, required: true},
+  coords: {
+    type: [Number],
+    index: '2dsphere'
+  },
   contactNumber: String,
   street: String,
   city: String,
