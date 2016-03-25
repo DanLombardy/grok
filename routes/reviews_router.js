@@ -2,7 +2,7 @@
 const express = require('express');
 const jsonParser = require('body-parser').json();
 const Business = require(__dirname + '/../models/business');
-const handleDBError = require(__dirname + '/../lib/handle_db_error');
+const handleError = require(__dirname + '/../lib/handle_error');
 
 const reviewRouter = module.exports = exports = express.Router();
 
@@ -19,7 +19,7 @@ reviewRouter.get('/businesses/:businessid/reviews', (req, res) => {
         },
         reviews: reviews
       };
-      if (err) return handleDBError(err, res);
+      if (err) return handleError(err, res);
       res.status(200).json(business);
     });
 });
@@ -37,7 +37,7 @@ reviewRouter.get('/businesses/:businessid/reviews/:reviewid', (req, res) => {
         },
         review: review
       };
-      if (err) return handleDBError(err, res);
+      if (err) return handleError(err, res);
       res.status(200).json(response);
     });
 });
@@ -58,7 +58,7 @@ reviewRouter.post('/businesses/:businessid/reviews', jsonParser, (req, res) => {
       business.reviews.push(review);
       business.save(function(err, business) {
         var thisReview = business.reviews[business.reviews.length - 1];
-        if (err) return handleDBError(err, res);
+        if (err) return handleError(err, res);
         res.status(200).json(thisReview);
       });
     });
@@ -78,7 +78,7 @@ reviewRouter.put('/businesses/:businessid/reviews/:reviewid', jsonParser, (req, 
       thisReview.missing = req.body.missing;
 
       business.save((err, business) => {
-        if (err) return handleDBError(err, res);
+        if (err) return handleError(err, res);
         res.status(200).json('successfully updated review');
       });
     });
@@ -91,10 +91,8 @@ reviewRouter.delete('/businesses/:businessid/reviews/:reviewid', (req, res) => {
     .exec((err, business) => {
       business.reviews.id(req.params.reviewid).remove();
       business.save(function(err) {
-        if (err) return handleDBError(err, res);
+        if (err) return handleError(err, res);
         res.status(200).json('successfully deleted review');
       });
     });
 });
-
-

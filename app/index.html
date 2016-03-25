@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Grok</title>
   <link rel="stylesheet" type="text/css" href="/css/main.css">
+
 </head>
 <body data-ng-app="grokApp">
   <header>
@@ -26,11 +27,16 @@
       </section>
     </div>
   </header>
+  <main>
+  <section data-ng-app="GrokApp">
 
   <main data-ng-view>
-
+    <d3-cloud data="cloudData"></d3-cloud>
+    <d3-cloud data="stuff"></d3-cloud>
   </main>
 
+  </section>
+  </main>
   <footer>
     <div>
       <section>
@@ -64,6 +70,7 @@
     </div>
   </footer>
   <script src="/bundle.js"></script>
+
 </body>
 
 </html>
