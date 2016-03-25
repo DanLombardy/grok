@@ -1,7 +1,5 @@
-var angular = require('angular');
-
 module.exports = function(app) {
-  app.controller('HomeController', ['$scope', '$http'
+  app.controller('HomeController', ['$scope', '$http',
     function ($scope, $http) {
 
       $http.get('http://localhost:3000/api/businesses')
@@ -9,8 +7,8 @@ module.exports = function(app) {
           function(data) {
             $scope.businesses = data;
           },
-          function(e) {
-            console.log(e);
+          function(err) {
+            console.log(err);
         })
   }]);
 }
