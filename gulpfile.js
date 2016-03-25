@@ -69,4 +69,3 @@ gulp.task('watch', () => {
 
 gulp.task('build', ['webpack:dev', 'static:dev', 'sass:dev']);
 gulp.task('default', ['lint', 'test:server']);
-

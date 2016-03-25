@@ -5,6 +5,10 @@ const grokApp = angular.module('grokApp', ['ngRoute']);
 require('./home')(grokApp);
 require('./business_detail')(grokApp);
 
+//Dan's Code
+require('./controllers/controllers')(grokApp);
+require('./directives/directives')(grokApp);
+
 grokApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/', {
