@@ -3,6 +3,7 @@ require('angular-route');
 const grokApp = angular.module('grokApp', ['ngRoute']);
 
 require('./home')(grokApp);
+require('./business_detail')(grokApp);
 
 grokApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
@@ -12,7 +13,7 @@ grokApp.config(['$routeProvider', function($routeProvider) {
     })
     .when('/business/:businessid', {
       templateUrl: '/views/business_detail_view.html',
-      controller: '/BusinessDetailController'
+      controller: 'BusinessDetailController'
     })
     .when('/user', {
       templateUrl: '/views/user_profile_view.html'
