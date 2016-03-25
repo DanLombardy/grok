@@ -1,14 +1,16 @@
+//TODO: Make angular service to abstract away http requests
+
 module.exports = function(app) {
   app.controller('HomeController', ['$scope', '$http',
-    function ($scope, $http) {
+    function($scope, $http) {
 
-      $http.get('http://localhost:3000/api/businesses')
+      $http.get('/api/businesses')
         .then(
-          function(data) {
+          (data) => {
             $scope.businesses = data;
           },
-          function(err) {
+          (err) => {
             console.log(err);
-        })
+          })
   }]);
-}
+};
