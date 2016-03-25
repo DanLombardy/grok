@@ -1,9 +1,10 @@
-<div>
-  hello
-  <div>{{messageOne}}</div>
-  <div>{{message}}</div>
-  <div ng-repeat="business in data.businesses">{{business.name}}</div>
-  <div ng-repeat="business in data.businesses">{{data}}</div>
-  <div ng-repeat="business in businesses">{{business.name}}</div>
-  <div ng-repeat="business in $scope.data.businesses">{{business.name}}</div>
-</div>
+<section>
+  <h1>Sample Participating Businesses</h1>
+  <br>
+  <div ng-repeat="business in businesses.data">
+    <a href="#/business/{{business._id}}">{{business.name}}</a>
+    <br>
+    <div>{{business.reviews}}</div>
+    <br>
+  </div>
+</section>

@@ -1,3 +1,4 @@
+// This service is not currently being used.
 module.exports = exports = function(app) {
   app.factory('grokData', ['$http', function grokData($http) {
 
