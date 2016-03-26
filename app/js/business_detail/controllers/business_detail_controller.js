@@ -5,8 +5,14 @@ module.exports = function(app) {
 
       $http.get('/api/businesses/' + $scope.businessid)
         .then(
-          (data) => {
-            $scope.business = data;
+          (res) => {
+            let reviews = res.data[0].reviews
+
+            $scope.business = res.data[0];
+
+            for (review in reviews) {
+              $scope.words = review.time;
+            }
           },
           (err) => {
             console.log(err);

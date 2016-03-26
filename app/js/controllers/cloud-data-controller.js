@@ -8,7 +8,7 @@ module.exports = function(app){
    console.log(metric);
 
      $http.post('/cloudData', metric).then(function(response){
-       console.log("this is response dat");
+       console.log("this is response data");
        console.log(response.data);
        var data = response.data;
        $scope.$broadcast("cloudData", data)
