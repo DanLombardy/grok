@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const mocha = require('gulp-mocha');
 const webpack = require('webpack-stream');
+const babel = require('babel-loader');
 const Server = require('karma').Server;
 const sass = require('gulp-sass');
 const sourceMaps = require('gulp-sourcemaps');
@@ -16,13 +17,13 @@ gulp.task('static:dev', () => {
 });
 
 gulp.task('webpack:dev', () => {
-  return gulp.src('app/js/entry.js')
-  .pipe(webpack({
-    output: {
-      filename: 'bundle.js'
-    }
-  }))
-  .pipe(gulp.dest('build/'));
+  gulp.src(__dirname + '/app/js/entry.js')
+    .pipe(webpack({
+      output: {
+        filename: 'bundle.js'
+      }
+    }))
+    .pipe(gulp.dest('build/'));
 });
 
 gulp.task('sass:dev', () => {
@@ -68,4 +69,3 @@ gulp.task('watch', () => {
 
 gulp.task('build', ['webpack:dev', 'static:dev', 'sass:dev']);
 gulp.task('default', ['lint', 'test:server']);
-

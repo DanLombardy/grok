@@ -1,0 +1,69 @@
+{
+  "name": "Mcdonalds",
+  "coords": [-122.332071, 47.606209],
+  "reviews":[{
+      "author": "Ronald Mcdonald",
+      "people": "The people were not clowns?!",
+      "time": "Food was delivered on time!",
+      "quality": "The nuggets were... OK...",
+      "soul": "Great atmosphere!",
+      "missing": "Not enough clowns!"
+    },
+    {
+      "author": "Tony the Tiger",
+      "people": "They were greeeeeat!",
+      "time": "It was greeeeat!",
+      "quality": "It was greeeeat!",
+      "soul": "It was greeeeat!",
+      "missing": "It was greeeeeeat!!!!!"
+    }]
+}
+
+{
+  "name": "Burger King",
+  "coords": [-122.338692, 47.590747],
+  "reviews":[{
+      "author": "Hamburgler Jones",
+      "people": "There was this weird tiger with crazy eyes",
+      "time": "Located in a convenient location. Got here pretty quickly.",
+      "quality": "The nuggets were... OK...",
+      "soul": "I have no soul",
+      "missing": "What's one thing they're mising? Well I just stole one of their hamburgers!!!! AHAHA... I need help."
+    },
+    {
+      "author": "Tony the Tiger",
+      "people": "They were greeeeeeat!",
+      "time": "It was greeeeeat!",
+      "quality": "It was greeeeeeeat!",
+      "soul": "It was greeeeeat!",
+      "missing": "It was greeeeeeeeat!"
+    }]
+}
+
+{
+  "name": "Wendy's",
+  "reviews":[{
+      "author": "Scary read headed girl",
+      "people": "They are all insects in my empire",
+      "time": "You are all running out of time...",
+      "quality": "The nuggets were... OK...",
+      "soul": "Your souls are mine!",
+      "missing": "No comment"
+    },
+    {
+      "author": "Tony the Tiger",
+      "people": "They were greeeeat!",
+      "time": "It was greeeeeeeeeeeat!",
+      "quality": "It was greeeeeat!",
+      "soul": "It was greeeeeeeeeat!",
+      "missing": "It was... I can't stop... not again .... greeeeeeat!!!!!.."
+    },
+    {
+      "author": "Al Gore",
+      "people": "Did you see the Manbearpig?!",
+      "time": "The waitresses sure are taking their time!... Oh, there are no waitresses ",
+      "quality": "Solid",
+      "soul": "Good vibe at the restaurant after the Manbearpig left.",
+      "missing": "Needs more Manbearpig traps."
+    }]
+}

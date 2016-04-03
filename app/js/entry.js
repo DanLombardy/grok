@@ -1,16 +1,31 @@
-require('angular/angular');
+const angular = require('angular');
 require('angular-route');
-var angular = window.angular;
+const grokApp = angular.module('grokApp', ['ngRoute']);
 
-var grokApp = angular.module('GrokApp', ['ngRoute']);
+require('./home')(grokApp);
+require('./business_detail')(grokApp);
 
-grokApp.config(['$routeProvider', function($route) {
-  $route
+//Dan's Code
+require('./controllers/controllers')(grokApp);
+require('./directives/directives')(grokApp);
+
+grokApp.config(['$routeProvider', function($routeProvider) {
+  $routeProvider
+    .when('/', {
+      templateUrl: '/views/home_view.html',
+      controller: 'HomeController'
+    })
+    .when('/business/:businessid', {
+      templateUrl: '/views/business_detail_view.html',
+      controller: 'BusinessDetailController'
+    })
     .when('/user', {
       templateUrl: '/views/user_profile_view.html'
     })
     .when('/addreview', {
       templateUrl: '/views/add_review_view.html'
     })
-    .otherwise({redirectTo: '/'});
+    .otherwise({
+      redirectTo: '/'
+    });
 }]);
