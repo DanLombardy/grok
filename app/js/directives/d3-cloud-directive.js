@@ -28,32 +28,32 @@ module.exports = function(app){
                   .start();
 
           function draw(words) {
-              d3.select(el[0]).append("svg")
-                      .attr("width", "100%")
-                      .attr("display", "block")
-                      .attr("border", "2px dashed")
-                      .attr("height", 350)
-                      .attr("class", "wordcloud")
-                      .append("g")
-                      // without the transform, words words would get cutoff to the left and top, they would
-                      // appear outside of the SVG area
-                      .attr("transform", "translate(320,200)")
-                      .selectAll("text")
-                      .data(words)
-                      .enter().append("text")
-                      .style("font-size", function(d) { return d.size + "px"; })
-                      .style("fill", function(d, i) { return d.color + ""; })
-                      .style('opacity', function(d, i) {
-                        let opacity = Math.random();
-                        return opacity < .1? opacity + .2: opacity
-                      })
-                      .attr("transform", function(d) {
-                          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-                      })
-                      .text(function(d) { return d.text; });
+            d3.select(el[0]).append("svg")
+                    .attr("width", "100%")
+                    .attr("display", "block")
+                    .attr("border", "2px dashed")
+                    .attr("height", 350)
+                    .attr("class", "wordcloud")
+                    .append("g")
+                    // without the transform, words words would get cutoff to the left and top, they would
+                    // appear outside of the SVG area
+                    .attr("transform", "translate(320,200)")
+                    .selectAll("text")
+                    .data(words)
+                    .enter().append("text")
+                    .style("font-size", function(d) { return d.size + "px"; })
+                    .style("fill", function(d, i) { return d.color + ""; })
+                    .style('opacity', function(d, i) {
+                      let opacity = Math.random();
+                      return opacity < .1? opacity + .2: opacity;
+                    })
+                    .attr("transform", function(d) {
+                      return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                    })
+                    .text(function(d) { return d.text; });
           }
         }
-      })
+      });
     }
     return {
       link: link,
@@ -65,5 +65,5 @@ module.exports = function(app){
       controller: 'CloudDataController'
     };
 
-  })
-}
+  });
+};

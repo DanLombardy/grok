@@ -40,10 +40,10 @@ gulp.task('lint', () => {
     .pipe(eslint({
       'rules': {
         'indent': [2, 2],
-        'quotes': [2, 'single'],
         'semi': [2, 'always'],
         'no-console': 0,
-        'no-unused-vars': 0
+        'no-unused-vars': 0,
+        'no-inner-declarations' : 0
       },
       env: {
         'es6': true,

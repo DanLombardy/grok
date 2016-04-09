@@ -24,7 +24,7 @@ app.post('/cloudData', jsonParser, (req, res)=>{
   console.log(tokenCloud);
   res.json(tokenCloud);
   res.end();
-})
+});
 
 var PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log('Server started on port: ' + PORT));

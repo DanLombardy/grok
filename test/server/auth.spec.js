@@ -5,7 +5,7 @@ var chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 var expect = chai.expect;
 var mongoose = require('mongoose');
-process.env.MONGOLAB_URI = 'mongodb://localhost/auth_test'
+process.env.MONGOLAB_URI = 'mongodb://localhost/auth_test';
 
 require(__dirname + '/../../server.js');
 var httpBasic = require(__dirname + '/../../lib/http_basic');
@@ -98,7 +98,7 @@ describe('auth', function() {
         .end(function(err, res) {
           expect(err).to.eql(null);
           expect(res.status).to.eql(200);
-          expect(res.body.msg).to.eql("A user has already signed up with that username.")
+          expect(res.body.msg).to.eql("A user has already signed up with that username.");
           done();
         });
     });

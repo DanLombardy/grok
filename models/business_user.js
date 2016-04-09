@@ -1,6 +1,8 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt');
+var eat = require('eat');
 
 var businessUserSchema = new mongoose.Schema({
   userName: String,

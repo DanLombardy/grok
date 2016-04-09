@@ -6,7 +6,8 @@ module.exports = function(app) {
       $http.get('/api/businesses/' + $scope.businessid)
         .then(
           (res) => {
-            let reviews = res.data[0].reviews
+            let reviews = res.data[0].reviews;
+            let review;
 
             $scope.business = res.data[0];
 
@@ -16,6 +17,6 @@ module.exports = function(app) {
           },
           (err) => {
             console.log(err);
-          })
-  }]);
+          });
+    }]);
 };
