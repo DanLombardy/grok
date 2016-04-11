@@ -18,6 +18,7 @@ app.use('/api', reviewRouter);
 app.use('/api', userRouter);
 
 app.post('/cloudData', jsonParser, (req, res)=>{
+  // data needs validation
   var obj = req.body;
   console.log(req.body);
   var tokenCloud = cloudTokenizer(obj);

@@ -15,7 +15,6 @@ module.exports = function(app){
 
         if(count === 0){
           count++;
-          args.shift();
           var wordCloud = args;
           console.log("inside on");
           console.log(wordCloud);
@@ -42,7 +41,8 @@ module.exports = function(app){
                     .data(words)
                     .enter().append("text")
                     .style("font-size", function(d) { return d.size + "px"; })
-                    .style("fill", function(d, i) { return d.color + ""; })
+                    // TO DO: figure out color randomization
+                    // .style("fill", function(d, i) { return d.color + ""; })
                     .style('opacity', function(d, i) {
                       let opacity = Math.random();
                       return opacity < .1? opacity + .2: opacity;
