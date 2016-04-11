@@ -15,6 +15,7 @@ businessRouter.get('/businesses', (req, res) => {
 
 businessRouter.get('/businesses/:businessid', (req, res) => {
   Business.find({_id: req.params.businessid}, (err, data) => {
+    console.log(data);
     if (err) return handleError(err, res);
     res.status(200).json(data);
   });
