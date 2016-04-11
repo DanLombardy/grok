@@ -1,23 +1,27 @@
 @import url(https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Roboto:400,700);
 
-$max-width: 1080px;
 $primary: #4d0099;
-// $secondary
+$secondary: #b3ecff;
 $font-std: 'Noto Serif', serif;
 
 body{
   font-family: $font-std;
-  color: #fff;
+  background: $secondary;
+  header {
+    color: #fff;
+    background: $primary;
+  }
+  main {
+    margin: 0 auto;
+  }
 }
 
-header {
-  background: $primary;
-}
 
 a {
   color: inherit;
   text-decoration: none;
 }
+
 
 /*Footer Styles*/
 

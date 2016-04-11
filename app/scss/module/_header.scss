@@ -1,0 +1,20 @@
+.header-container {
+  max-width: $max-width;
+  margin: 0 auto;
+  .title {
+    font-size: 3em;
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  .menu-icon-container {
+    float: right;
+    margin: 20px;
+    .menu-icon {
+      height: 50px;
+      width: 50px;
+    }
+  }
+}
+
+
