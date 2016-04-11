@@ -7,12 +7,13 @@ const Server = require('karma').Server;
 const sass = require('gulp-sass');
 const sourceMaps = require('gulp-sourcemaps');
 const minifyCss = require('gulp-minify-css');
-
+// TO DO: configure browsersync
+const browserSync = require('browser-sync');
 
 const allScripts = ['**/*.js', '!node_modules/**', '!build/**'];
 
 gulp.task('static:dev', () => {
-  gulp.src('app/**/*.html')
+  gulp.src(['app/**/*.html', 'app/**/*.png'])
   .pipe(gulp.dest('build/'));
 });
 
@@ -27,7 +28,7 @@ gulp.task('webpack:dev', () => {
 });
 
 gulp.task('sass:dev', () => {
-  return gulp.src('app/sass/**/*.scss')
+  return gulp.src(['app/scss/**/*.scss', 'app/scss/vendor/font_awesome'])
     .pipe(sourceMaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(minifyCss())
@@ -63,7 +64,7 @@ gulp.task('test:server', () => {
 gulp.task('watch', () => {
   gulp.watch(allScripts, ['lint']);
   gulp.watch('app/js/*.js', ['webpack:dev'] );
-  gulp.watch('app/sass/**/*.scss', ['sass:dev'] );
+  gulp.watch('app/scss/**/*.scss', ['sass:dev'] );
   gulp.watch('app/**/*.html', ['static:dev']);
 });
 
