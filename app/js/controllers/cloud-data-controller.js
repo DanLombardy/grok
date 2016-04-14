@@ -1,18 +1,19 @@
 module.exports = function(app){
 
   app.controller('CloudDataController', function($scope, $http){
-    $scope.postSingle = function(metric){
-      console.log('hit sucka');
-      console.log(metric);
+		let data;
+		console.log(data);
 
-      $http.post('/cloudData', metric).then(function(response){
-        console.log("this is response data");
-        console.log(response.data);
-        var data = response.data;
-        $scope.$broadcast("cloudData", data);
-      }, function(err){
-        throw err;
-      });
-    };
+		if($scope.address){
+			data = {address: $scope.address};
+			$http.post('/api/businesses/address', data).then(function(response){
+	      console.log("this is response data");
+	      console.log(response.data);
+	      var data = response.data;
+	      $scope.$broadcast("cloudData", data);
+	    }, function(err){
+	      throw err;
+	    });
+		}
   });
 };

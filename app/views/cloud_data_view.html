@@ -8,16 +8,7 @@
           you to go here, customer demographics,
           Example hint: “knowledgeable service”, “great nerd meetup”, “romantic date spot”, “full of hipsters”
         </p>
-        <input type="color-one" id="people" required data-ng-model="metric.one.value">
-        <label id="color-one" for="titleName">Pick Color</label>
-        <select name="select" data-ng-model="metric.one.color" >
-          <option value="black">Black</option>
-          <option value="blue">Blue</option>
-          <option value="red">Red</option>
-          <option value="yellow">Purple</option>
-          <option value="green">Green</option>
-          <option value="orange">Orange</option>
-        </select>
+        <input type="text" id="people" required data-ng-model="metric.one.value">
       </div>
 
       <div>
@@ -27,15 +18,6 @@
           Example hint: “Fast delivery”, “long lines”, “worth the trek”, “2am burrito”
         </p>
         <input type="text" id="time" required data-ng-model="metric.two.value">
-        <label for="color-two">Pick Color</label>
-        <select id="color-two" name="select" data-ng-model="metric.two.color" >
-          <option value="black">Black</option>
-          <option value="blue">Blue</option>
-          <option value="red">Red</option>
-          <option value="yellow">Purple</option>
-          <option value="green">Green</option>
-          <option value="orange">Orange</option>
-        </select>
       </div>
 
       <div >
@@ -45,15 +27,6 @@
           Example hint: “makes me drool to think about”, “biggest slice ever”, “never had mexican like that before”
         </p>
         <input type="text" id="quality" required data-ng-model="metric.three.value">
-        <label for="color-three">Pick Color</label>
-        <select id="color-three" name="select" data-ng-model="metric.three.color" >
-          <option value="black">Black</option>
-          <option value="blue">Blue</option>
-          <option value="red">Red</option>
-          <option value="yellow">Purple</option>
-          <option value="green">Green</option>
-          <option value="orange">Orange</option>
-        </select>
       </div>
 
       <div>
@@ -63,22 +36,19 @@
           Example hint: “authentic russian borsch”, “make 7, ups and downs”, “the waiter slapped me and I loved it”
         </p>
         <input type="text" id="soul" required data-ng-model="metric.four.value">
-        <label for="color-four">Pick Color</label>
-        <select id="color-four" name="select" data-ng-model="metric.four.color" >
-          <option value="black">Black</option>
-          <option value="blue">Blue</option>
-          <option value="red">Red</option>
-          <option value="yellow">Purple</option>
-          <option value="green">Green</option>
-          <option value="orange">Orange</option>
-        </select>
       </div>
 
       <div>
-        <label for="five">Enter Metric Five </label>
-        <input type="text" id="five" required data-ng-model="metric.five.value">
-        <label for="color-five">Metric Five  Color</label>
-        <select id="color-five" name="select" data-ng-model="metric.five.color" >
+        <label for="missing">Missing </label>
+        <p>
+          What is missing?
+        </p>
+        <input type="text" id="missing" required data-ng-model="metric.five.value">
+      </div>
+
+      <div>
+				<label for="color">Color of Words</label>
+        <select id="color" name="select" data-ng-model="metric.color" >
           <option value="black">Black</option>
           <option value="blue">Blue</option>
           <option value="red">Red</option>
@@ -86,9 +56,8 @@
           <option value="green">Green</option>
           <option value="orange">Orange</option>
         </select>
-
       </div>
-      
+
         <button type="submit" data-ng-click="postSingle(metric)">Get DataCloud</button>
   </form>
 

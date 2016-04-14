@@ -22,6 +22,7 @@ const businessSchema = new mongoose.Schema({
     index: '2dsphere'
   },
   contactNumber: String,
+	fullAddress: String,
   street: String,
   city: String,
   state: String,
