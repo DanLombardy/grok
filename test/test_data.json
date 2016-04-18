@@ -1,6 +1,7 @@
 {
   "name": "Mcdonalds",
   "coords": [-122.332071, 47.606209],
+  "fullAddress": "515 22nd Ave, Seattle, WA 98122",
   "reviews":[{
       "author": "Ronald Mcdonald",
       "people": "The people were not clowns?!",
@@ -22,6 +23,7 @@
 {
   "name": "Burger King",
   "coords": [-122.338692, 47.590747],
+  "fullAddress": "525 22nd Ave, Seattle, WA 98122",
   "reviews":[{
       "author": "Hamburgler Jones",
       "people": "There was this weird tiger with crazy eyes",
@@ -42,6 +44,7 @@
 
 {
   "name": "Wendy's",
+  "fullAddress": "535 22nd Ave, Seattle, WA 98122",
   "reviews":[{
       "author": "Scary read headed girl",
       "people": "They are all insects in my empire",
