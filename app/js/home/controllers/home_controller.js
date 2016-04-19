@@ -22,7 +22,6 @@ module.exports = function(app) {
 
 			function initAutocomplete() {
 				console.log("i got run asshole");
-				console.log(google);
 				var map = new google.maps.Map(document.getElementById('map'), {
 					center: {lat: -33.8688, lng: 151.2195},
 					zoom: 13,
