@@ -63,7 +63,7 @@ gulp.task('test:server', () => {
 
 gulp.task('watch', () => {
   // gulp.watch(allScripts, ['lint']);
-  gulp.watch('app/js/*.js', ['webpack:dev'] );
+  gulp.watch('app/js/**/*.js', ['webpack:dev'] );
   gulp.watch('app/scss/**/*.scss', ['sass:dev'] );
   gulp.watch('app/**/*.html', ['static:dev']);
 });
