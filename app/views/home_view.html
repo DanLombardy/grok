@@ -1,18 +1,14 @@
-<section>
-  <h1>Sample Participating Businesses</h1>
-  <br>
-  <div>
+<section id="main-container">
+  <h1>Welcome to Grok. Pick a business to view:</h1>
+
+    <div id="map-container">
+      <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+      <div id="map"></div>
+    </div>
     <div ng-repeat="business in businesses.data">
       <a href="#/business/{{business._id}}">{{business.name}}</a>
       <div>id: {{business._id}}</div>
       <div>coordinates: {{business.coords}}</div>
     </div>
-		<d3-cloud address="515 22nd Ave, Seattle, WA 98122"></d3-cloud>
-
-		<input id="pac-input" class="controls" type="text" placeholder="Search Box">
-	  <div id="map"></div>
-  </div>
-
-	
-	</script>
+    <d3-cloud address="515 22nd Ave, Seattle, WA 98122"></d3-cloud>
 </section>

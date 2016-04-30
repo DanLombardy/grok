@@ -1,4 +1,3 @@
-"use strict";
 const d3 = require('d3');
 const cloud = require('d3-cloud');
 
