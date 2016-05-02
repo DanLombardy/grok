@@ -5,16 +5,16 @@ const express = require('express');
 const jsonParser = require('body-parser').json();
 const Business = require(__dirname + '/../models/business');
 const handleError = require(__dirname + '/../lib/handle_error');
-const cloudTokenizer = require(__dirname + '/../lib/cloud-tokenizer');
+const cloudTokenizer = require(__dirname + '/../lib/cloud_tokenizer');
 
 
 const businessRouter = module.exports = exports = express.Router();
 
 businessRouter.get('/businesses', (req, res) => {
-  Business.find({}, (err, data) => {
-    if (err) return handleError(err, res);
-    res.status(200).json(data);
-  });
+	Business.find({}, (err, data) => {
+		if (err) return handleError(err, res);
+		res.status(200).json(data);
+	});
 });
 
 businessRouter.post('/businesses/address', jsonParser, (req, res) => {
@@ -22,7 +22,6 @@ businessRouter.post('/businesses/address', jsonParser, (req, res) => {
 	let reviews;
 	let tokenCloud;
 	Business.find({fullAddress: address}, (err, data) => {
-		console.log(data);
 		if (err) return handleError(err, res);
 
 		//need to add in if case for empty array (no finds)
@@ -43,34 +42,33 @@ businessRouter.post('/businesses/address', jsonParser, (req, res) => {
 });
 
 businessRouter.get('/businesses/:businessid', (req, res) => {
-  Business.find({_id: req.params.businessid}, (err, data) => {
-    console.log(data);
-    if (err) return handleError(err, res);
-    res.status(200).json(data);
-  });
+	Business.find({_id: req.params.businessid}, (err, data) => {
+		if (err) return handleError(err, res);
+		res.status(200).json(data);
+	});
 });
 
 businessRouter.post('/businesses', jsonParser, (req, res) => {
-  const newBusiness = new Business(req.body);
-  newBusiness.save((err, data) => {
-    if (err) return handleError(err, res);
-    res.status(200).json(data);
-  });
+	const newBusiness = new Business(req.body);
+	newBusiness.save((err, data) => {
+		if (err) return handleError(err, res);
+		res.status(200).json(data);
+	});
 });
 
 businessRouter.put('/businesses/:businessid', jsonParser, (req, res) => {
-  const businessData = req.body;
-  delete businessData._id;
+	const businessData = req.body;
+	delete businessData._id;
 
-  Business.update({_id: req.params.id}, businessData, (err, data) => {
-    if (err) return handleError(err, res);
-    res.status(200).json({msg: 'successfully updated business'});
-  });
+	Business.update({_id: req.params.id}, businessData, (err, data) => {
+		if (err) return handleError(err, res);
+		res.status(200).json({msg: 'successfully updated business'});
+	});
 });
 
 businessRouter.delete('/businesses/:businessid', (req, res) => {
-  Business.remove({_id: req.params.id}, (err, data) => {
-    if (err) return handleError(err, res);
-    res.status(200).json({msg: 'successfully removed business'});
-  });
+	Business.remove({_id: req.params.id}, (err, data) => {
+		if (err) return handleError(err, res);
+		res.status(200).json({msg: 'successfully removed business'});
+	});
 });

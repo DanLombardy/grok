@@ -5,7 +5,7 @@ const businessRouter = require(__dirname + '/routes/business_router');
 const reviewRouter = require(__dirname + '/routes/review_router');
 const userRouter = require(__dirname + '/routes/user_router');
 const jsonParser = require('body-parser').json();
-const cloudTokenizer = require(__dirname + '/lib/cloud-tokenizer');
+const cloudTokenizer = require(__dirname + '/lib/cloud_tokenizer');
 
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/grok_dev');
 
@@ -18,13 +18,13 @@ app.use('/api', reviewRouter);
 app.use('/api', userRouter);
 
 app.get('/cloudData', jsonParser, (req, res)=>{
-  // data needs validation
-  var obj = req.body;
-  console.log(req.body);
-  var tokenCloud = cloudTokenizer(obj);
-  console.log(tokenCloud);
-  res.json(tokenCloud);
-  res.end();
+	// data needs validation
+	var obj = req.body;
+	console.log(req.body);
+	var tokenCloud = cloudTokenizer(obj);
+	console.log(tokenCloud);
+	res.json(tokenCloud);
+	res.end();
 });
 
 var PORT = process.env.PORT || 3000;
