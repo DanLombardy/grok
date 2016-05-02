@@ -1,65 +1,63 @@
 <section>
-  <form name="metric1Form" data-ng-submit="postSingle(metric)" >
-      <div>
-        <h2>Post a Metric to Get a DataCloud</h2>
-        <label for="people">People</label>
-        <p>
-          employees, customer service, who you’d recommend to come there, friends that told
-          you to go here, customer demographics,
-          Example hint: “knowledgeable service”, “great nerd meetup”, “romantic date spot”, “full of hipsters”
-        </p>
-        <input type="text" id="people" required data-ng-model="metric.one.value">
-      </div>
+	<form name="metric1Form" data-ng-submit="postSingle(metric)" >
+		<div>
+			<h2>Post a Metric to Get a DataCloud</h2>
+			<label for="people">People</label>
+			<p>
+				employees, customer service, who you’d recommend to come there, friends that told
+				you to go here, customer demographics,
+				Example hint: “knowledgeable service”, “great nerd meetup”, “romantic date spot”, “full of hipsters”
+			</p>
+			<input type="text" id="people" required data-ng-model="metric.one.value">
+		</div>
 
-      <div>
-        <label for="time">Time </label>
-        <p>
-          Time between order and and receive, time to get there, time to get where you are going,
-          Example hint: “Fast delivery”, “long lines”, “worth the trek”, “2am burrito”
-        </p>
-        <input type="text" id="time" required data-ng-model="metric.two.value">
-      </div>
+		<div>
+			<label for="time">Time </label>
+			<p>
+				Time between order and and receive, time to get there, time to get where you are going,
+				Example hint: “Fast delivery”, “long lines”, “worth the trek”, “2am burrito”
+			</p>
+			<input type="text" id="time" required data-ng-model="metric.two.value">
+		</div>
 
-      <div >
-        <label for="quality">Quality</label>
-        <p>
-          portion size, good or bad food, what was expected and delivered,
-          Example hint: “makes me drool to think about”, “biggest slice ever”, “never had mexican like that before”
-        </p>
-        <input type="text" id="quality" required data-ng-model="metric.three.value">
-      </div>
+		<div >
+			<label for="quality">Quality</label>
+			<p>
+				portion size, good or bad food, what was expected and delivered,
+				Example hint: “makes me drool to think about”, “biggest slice ever”, “never had mexican like that before”
+			</p>
+			<input type="text" id="quality" required data-ng-model="metric.three.value">
+		</div>
 
-      <div>
-        <label for="soul">Soul</label>
-        <p>
-          aesthetics, expectations to genre, marketing campaigns
-          Example hint: “authentic russian borsch”, “make 7, ups and downs”, “the waiter slapped me and I loved it”
-        </p>
-        <input type="text" id="soul" required data-ng-model="metric.four.value">
-      </div>
+		<div>
+			<label for="soul">Soul</label>
+			<p>
+				aesthetics, expectations to genre, marketing campaigns
+				Example hint: “authentic russian borsch”, “make 7, ups and downs”, “the waiter slapped me and I loved it”
+			</p>
+			<input type="text" id="soul" required data-ng-model="metric.four.value">
+		</div>
 
-      <div>
-        <label for="missing">Missing </label>
-        <p>
-          What is missing?
-        </p>
-        <input type="text" id="missing" required data-ng-model="metric.five.value">
-      </div>
+		<div>
+			<label for="missing">Missing </label>
+			<p>
+				What is missing?
+			</p>
+			<input type="text" id="missing" required data-ng-model="metric.five.value">
+		</div>
 
-      <div>
-				<label for="color">Color of Words</label>
-        <select id="color" name="select" data-ng-model="metric.color" >
-          <option value="black">Black</option>
-          <option value="blue">Blue</option>
-          <option value="red">Red</option>
-          <option value="yellow">Purple</option>
-          <option value="green">Green</option>
-          <option value="orange">Orange</option>
-        </select>
-      </div>
+		<div>
+			<label for="color">Color of Words</label>
+			<select id="color" name="select" data-ng-model="metric.color" >
+				<option value="black">Black</option>
+				<option value="blue">Blue</option>
+				<option value="red">Red</option>
+				<option value="yellow">Purple</option>
+				<option value="green">Green</option>
+				<option value="orange">Orange</option>
+			</select>
+		</div>
 
-        <button type="submit" data-ng-click="postSingle(metric)">Get DataCloud</button>
-  </form>
-
-
+		<button type="submit" data-ng-click="postSingle(metric)">Get DataCloud</button>
+	</form>
 </section>
