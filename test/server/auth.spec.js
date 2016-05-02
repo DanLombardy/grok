@@ -16,7 +16,7 @@ var User = require(__dirname + '/../../models/public_user');
 var url = 'localhost:3000/api';
 
 describe('http_basic', function() {
-	it("should be able to parse http basic auth", function() {
+	it('should be able to parse http basic auth', function() {
 		var req = {
 			headers: {
 				authorization: 'Basic ' + (new Buffer('tester:foobar123')).toString('base64')
@@ -38,7 +38,7 @@ describe('auth', function() {
 		});
 	});
 
-	it("should be able to create a user", function(done) {
+	it('should be able to create a user', function(done) {
 		chai.request(url)
 			.post('/signup')
 			.send({userName: 'tester2', password: 'foobar123'})
@@ -49,7 +49,7 @@ describe('auth', function() {
 			});
 	});
 
-	describe("user already in database", function() {
+	describe('user already in database', function() {
 		before(function(done) {
 			var user = new User();
 			user.userName = 'tester3';
@@ -66,7 +66,7 @@ describe('auth', function() {
 			}.bind(this));
 		});
 
-		it("should be able to sign in", function(done) {
+		it('should be able to sign in', function(done) {
 			chai.request(url)
 				.get('/signin')
 				.auth('tester3', 'foobar123')
@@ -77,7 +77,7 @@ describe('auth', function() {
 				});
 		});
 
-		it("should be able to authenticate with eatAuth", function(done) {
+		it('should be able to authenticate with eatAuth', function(done) {
 			var token = this.token;
 			var req = {
 				headers: {
@@ -91,14 +91,14 @@ describe('auth', function() {
 			});
 		});
 
-		it("should respond accordingly if username already exists", function(done) {
+		it('should respond accordingly if username already exists', function(done) {
 			chai.request(url)
 				.post('/signup')
 				.send({userName: 'tester3', password: 'fooey123'})
 				.end(function(err, res) {
 					expect(err).to.eql(null);
 					expect(res.status).to.eql(200);
-					expect(res.body.msg).to.eql("A user has already signed up with that username.");
+					expect(res.body.msg).to.eql('A user has already signed up with that username.');
 					done();
 				});
 		});
