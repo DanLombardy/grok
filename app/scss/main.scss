@@ -1,14 +1,14 @@
 // TODO: Refactor CSS
 
 // Vendor
-@import 'vendor/0cssRest';
+// @import 'vendor/0cssRest';
 @import 'vendor/autocomplete';
 
 // Base
-@import 'base/base';
+// @import 'base/base';
 
 // Layout
-@import 'layout/layout';
+// @import 'layout/layout';
 // @import 'layout/header';
 // @import 'layout/main';
 // @import 'layout/footer';
@@ -21,8 +21,8 @@
 @import 'module/footer';
 @import 'module/google_map_search';
 
-//State
-@import 'state/state';
-
 // Theme
 @import 'theme/theme';
+
+// Style
+@import 'custom_style/style'

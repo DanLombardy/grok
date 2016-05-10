@@ -1,0 +1,43 @@
+/* Footer */
+.footer a:not(.icon) {
+  color: #474c52;
+  font-size: 12px;
+  border-bottom: 0px;
+}
+
+.footer a:hover,
+.footer a:focus,
+.footer a:active {
+  color: #1fc8db;
+}
+
+.hero {
+  opacity: .8;
+}
+
+.logo,
+.title,
+.item-name,
+.item-seller {
+  font-family: 'Montserrat', sans-serif;
+}
+
+footer .container div div p .github:hover,
+footer .container div div p .github:focus,
+footer .container div div p .github:active {
+  color: #4078c0;
+}
+
+footer {
+  text-align: center;
+}
+
+.footer-header {
+  font-weight: 700;
+  color: #474c52;
+}
+
+footer .fa {
+  font-size: 14px;
+  vertical-align: baseline;
+}
