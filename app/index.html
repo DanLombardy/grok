@@ -4,30 +4,55 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Grok</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
 
 </head>
 <body data-ng-app="grokApp">
-	<header>
-		<div class="header-container">
-			<h1 class="title"><a href="#/">Grok</a></h1>
-			<a class="menu-icon-container" href=""><img class="menu-icon" src="images/menu_icon.png"></a>
-		<nav>
-			<ul>
-				<li><a href="#/">Home</a></li>
-				<li>
-					<a href="#/user">User Profile</a>
-					<img id="user-profile-img" src="images/profile_blank.png"/>
-				</li>
-			</ul>
-		</nav>
+
+	<!-- Header -->
+	<header class="section" style="height: 112px;">
+		<div class="container">
+		  <nav class="navbar">
+
+		    <!-- Left side -->
+		    <div class="navbar-left">
+		      <div class="navbar-item">
+		        <p class="subtitle is-5">
+		          <strong class="logo"><a href="#/" style="border-bottom: 0px; color: #c96b67;">Grok</a></strong>
+		        </p>
+		      </div>
+		      <div class="navbar-item">
+		        <p class="control is-grouped">
+		          <input class="input" type="text" placeholder="Find something">
+		          <button class="button is-primary">Search</button>
+		        </p>
+		      </div>
+		    </div>
+
+		    <!-- Right side -->
+		    <div class="navbar-right">
+		      <p class="navbar-item"><a href=".">Sign-in</a></p>
+		      <p class="navbar-item"><a href=".">Sign-up</a></p>
+		    </div>
+		  </nav>
 		</div>
 	</header>
 
-	<main data-ng-view>
-	</main>
-	<footer>
-		<h1>copyright grok</h1>
+	<!-- Main -->
+	<main data-ng-view></main>
+
+	<!-- Footer -->
+	<footer class="footer" style="padding-bottom: 40px;">
+		<div class="container">
+		  <div class="content is-centered is-mobile">
+		    <span>Made by
+		      <a href="https://github.com/Grok-Team/grok" target="_blank" class="footer-header">Team Grok
+						<i class="fa fa-github"></i>
+		      </a>
+		    </span>
+		  </div>
+		</div>
 	</footer>
 
 	<script src="/bundle.js"></script>
