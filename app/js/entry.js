@@ -1,6 +1,7 @@
 const angular = require('angular');
 require('angular-route');
 const grokApp = angular.module('grokApp', ['ngRoute', 'google.places']);
+require(__dirname + '/directives/directives')(grokApp); // generic components
 
 require(__dirname + '/home')(grokApp);
 require(__dirname + '/business_detail')(grokApp);
